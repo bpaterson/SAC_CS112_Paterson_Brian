@@ -1,0 +1,15 @@
+SAC_CS112_Paterson_Brian
+========================
+
+CS112 Java
+
+
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello World!");
+	}
+
+}
