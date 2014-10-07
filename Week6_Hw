@@ -1,0 +1,73 @@
+-- 3.1 --
+
+a) Each class declaration that begins with the keyword: Public, must be stored in
+	a file that has exactly the same name as the class and ends with the .java 
+	file-name extension.
+b) Keyword: Class, in a class declaration is followed immediatedly by the class's name
+c) Keyword: New, requests memory from the system to store an object, then calls the
+	corresponding class's constructo to initalize the object.
+d) Each parameter must specify both a(n): Type, and a(n) name.
+e) By default, classes that are compiled in the same directory are considered to be in
+	the same package, known as the: Default Package.
+f) When each object of a class maintains its own copy of an attribute, the field that
+	represents the attribute is also known as a(n) Instance Variable.
+g) Java provides two primitive types for storing floating-point numbers in memory: Float,
+	and: Double.
+h) Variables of type double represent: Double-Precision, floating-point numbers.
+i) Scanner method: NextDouble, returns a double value.
+j) Keyword public is an access: Modifier.
+k) Return type: Void, indicates that a method will not return a value.
+l) Scanner method: NextLine, reads characters until it encoutners a newline character,
+	then returns those characters as a string.
+m) Calss String is in package: Java.Lang.
+n) A(n): ImportDeclaration, is not required if you always refer to a class with its
+	fully qualified class name.
+o) A(n): Floating-Point Number, is a number with a decimal point, such as 7.33, 0.0975
+	or 1000.12345.
+p) Variables of type float represent: Single-Precision, floating-point numbers
+q) The format specifier: %f, is used to output values of type float or double.
+r) Types in Java are divided into two categories-: Primitive, types and: Reference types.
+
+-- 3.2 --
+
+a) By convention, method names begin with an uppercase first letter, and all subsequent
+	words in the name begin with a capital first letter. -False-: method names must
+	begin with a lower case first letter otherwise the java system would not recognize
+	the method that is being declared.
+b) An import declaration is not required when one class in a package uses another in the
+	same package. -True-
+c) Empty parentheses following a method name in a method declaration indicate that the 
+	method does not require any parameters to form its task. -True-
+d) Variables or methods declared with access modifiers private are accessible only to 
+	methods of the class in which they're declared. -True-
+e) A primitive-type variable can be used to invoke a method. -False-: A primitive variable
+	cannot be used to invoke a method, a reference to an object is required.
+f) Variables declared in the body of a particular method are known as  instance variables
+	and can be used in all methods of the class. -False-:These variables are called
+	local variables, and can only be used in the methods they were declared to.
+g) Every method's body is delimited by left and right braces ({ and }). -True-
+h) Primitive-type local variables are initialized by default. -False-: Local variables are
+	not initialized by default and each local variable must be assigned a value.
+i) Reference-type instance variables are initialized by default to the value null. -True-
+j) Any class that contains public static void main(String [] args) can be used to execute
+	an application. -True-
+k) The number of arguements in a method call must match the number of parameters in the
+	method declaration's parameter list. -True-
+l) Floating-point values that appear in source code are known as floating-point literals and
+	are type float by default. -False-: Literals are Double by default.
+
+-- 3.3 --
+
+What is the difference between a local variable and a field?
+
+A local variable is declared within a method and may only be referenced within that
+very same method. A field variable is declared at the beginning of a class and the 
+field variables can be referenced by all the methods that the class contains.
+
+-- 3.4 --
+
+Explain the purpose of a method parameter. What is the difference between a parameter
+and an arguement?
+
+A method parameter is the additional information that is required for a method to perform
+it's task. An arguement is the value for a method parameter.
