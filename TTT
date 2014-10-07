@@ -1,0 +1,266 @@
+Public Class FormTicTacToe
+    Dim gCurrentMove As Integer = 0
+
+    Private Sub Check4Winner()
+        If (ButtonR1C1.Text = "X" And ButtonR1C2.Text = "X" And ButtonR1C3.Text = "X") _
+            Or (ButtonR2C1.Text = "X" And ButtonR2C2.Text = "X" And ButtonR2C3.Text = "X") _
+            Or (ButtonR3C1.Text = "X" And ButtonR3C2.Text = "X" And ButtonR3C3.Text = "X") _
+            Or (ButtonR1C1.Text = "X" And ButtonR2C1.Text = "X" And ButtonR3C1.Text = "X") _
+            Or (ButtonR1C2.Text = "X" And ButtonR2C2.Text = "X" And ButtonR3C2.Text = "X") _
+            Or (ButtonR1C3.Text = "X" And ButtonR2C3.Text = "X" And ButtonR2C3.Text = "X") _
+            Or (ButtonR1C1.Text = "X" And ButtonR2C2.Text = "X" And ButtonR3C3.Text = "X") _
+            Or (ButtonR3C1.Text = "X" And ButtonR2C2.Text = "X" And ButtonR1C3.Text = "X") _
+        Then
+            MsgBox("X Wins")
+        ElseIf (ButtonR1C1.Text = "O" And ButtonR1C2.Text = "O" And ButtonR1C3.Text = "O") _
+            Or (ButtonR2C1.Text = "O" And ButtonR2C2.Text = "O" And ButtonR2C3.Text = "O") _
+            Or (ButtonR3C1.Text = "O" And ButtonR3C2.Text = "O" And ButtonR3C3.Text = "O") _
+            Or (ButtonR1C1.Text = "O" And ButtonR2C1.Text = "O" And ButtonR3C1.Text = "O") _
+            Or (ButtonR1C2.Text = "O" And ButtonR2C2.Text = "O" And ButtonR3C2.Text = "O") _
+            Or (ButtonR1C3.Text = "O" And ButtonR2C3.Text = "O" And ButtonR2C3.Text = "O") _
+            Or (ButtonR1C1.Text = "O" And ButtonR2C2.Text = "O" And ButtonR3C3.Text = "O") _
+            Or (ButtonR3C1.Text = "O" And ButtonR2C2.Text = "O" And ButtonR1C3.Text = "O") _
+        Then
+            MsgBox("O Wins")
+        ElseIf (ButtonR1C1.Text <> "" And ButtonR1C2.Text <> "" And ButtonR1C3.Text <> "" _
+                And ButtonR2C1.Text <> "" And ButtonR2C2.Text <> "" And ButtonR2C3.Text <> "" _
+                And ButtonR3C1.Text <> "" And ButtonR3C2.Text <> "" And ButtonR3C3.Text <> "") _
+        Then
+            MsgBox("Draw")
+        End If
+
+
+    End Sub
+
+    Private Sub ButtonR1C1_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR1C1.Click
+        If ButtonR1C1.Text = "X" Or ButtonR1C1.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label
+        If gCurrentMove = 0 Then
+            ButtonR1C1.Text = "O"
+        End If
+        If gCurrentMove = 1 Then
+            ButtonR1C1.Text = "X"
+        End If
+        ' Plan for next move
+        If gCurrentMove = 0 Then
+            gCurrentMove = 1
+        Else
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+
+    End Sub
+
+    Private Sub ButtonR1C2_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR1C2.Click
+        If ButtonR1C2.Text = "X" Or ButtonR1C2.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label & Plan for next move
+        If gCurrentMove = 0 Then
+            ButtonR1C2.Text = "O"
+            gCurrentMove = 1
+        Else
+            ButtonR1C2.Text = "X"
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+
+    End Sub
+
+    Private Sub ButtonR1C3_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR1C3.Click
+        If ButtonR1C3.Text = "X" Or ButtonR1C3.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label
+        If gCurrentMove = 0 Then
+            ButtonR1C3.Text = "O"
+        End If
+        If gCurrentMove = 1 Then
+            ButtonR1C3.Text = "X"
+        End If
+        ' Plan for next move
+        If gCurrentMove = 0 Then
+            gCurrentMove = 1
+        Else
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+    End Sub
+
+    Private Sub ButtonR2C1_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR2C1.Click
+        If ButtonR2C1.Text = "X" Or ButtonR2C1.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label
+        If gCurrentMove = 0 Then
+            ButtonR2C1.Text = "O"
+        End If
+        If gCurrentMove = 1 Then
+            ButtonR2C1.Text = "X"
+        End If
+        ' Plan for next move
+        If gCurrentMove = 0 Then
+            gCurrentMove = 1
+        Else
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+
+    End Sub
+
+    Private Sub ButtonR2C2_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR2C2.Click
+        If ButtonR2C2.Text = "X" Or ButtonR2C2.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label
+        If gCurrentMove = 0 Then
+            ButtonR2C2.Text = "O"
+        End If
+        If gCurrentMove = 1 Then
+            ButtonR2C2.Text = "X"
+        End If
+        ' Plan for next move
+        If gCurrentMove = 0 Then
+            gCurrentMove = 1
+        Else
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+
+    End Sub
+
+    Private Sub ButtonR2C3_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR2C3.Click
+        If ButtonR2C3.Text = "X" Or ButtonR2C3.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label
+        If gCurrentMove = 0 Then
+            ButtonR2C3.Text = "O"
+        End If
+        If gCurrentMove = 1 Then
+            ButtonR2C3.Text = "X"
+        End If
+        ' Plan for next move
+        If gCurrentMove = 0 Then
+            gCurrentMove = 1
+        Else
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+
+    End Sub
+
+    Private Sub ButtonR3C1_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR3C1.Click
+        If ButtonR3C1.Text = "X" Or ButtonR3C1.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label
+        If gCurrentMove = 0 Then
+            ButtonR3C1.Text = "O"
+        End If
+        If gCurrentMove = 1 Then
+            ButtonR3C1.Text = "X"
+        End If
+        ' Plan for next move
+        If gCurrentMove = 0 Then
+            gCurrentMove = 1
+        Else
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+
+    End Sub
+
+    Private Sub ButtonR3C2_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR3C2.Click
+        If ButtonR3C2.Text = "X" Or ButtonR3C2.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label
+        If gCurrentMove = 0 Then
+            ButtonR3C2.Text = "O"
+        End If
+        If gCurrentMove = 1 Then
+            ButtonR3C2.Text = "X"
+        End If
+        ' Plan for next move
+        If gCurrentMove = 0 Then
+            gCurrentMove = 1
+        Else
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+    End Sub
+
+    Private Sub ButtonR3C3_Click(sender As System.Object, e As System.EventArgs) Handles ButtonR3C3.Click
+        If ButtonR3C3.Text = "X" Or ButtonR3C3.Text = "O" Then
+            Exit Sub
+        End If
+        ' Update the button label
+        If gCurrentMove = 0 Then
+            ButtonR3C3.Text = "O"
+        End If
+        If gCurrentMove = 1 Then
+            ButtonR3C3.Text = "X"
+        End If
+        ' Plan for next move
+        If gCurrentMove = 0 Then
+            gCurrentMove = 1
+        Else
+            gCurrentMove = 0
+        End If
+
+        Check4Winner()
+
+
+    End Sub
+
+
+    Private Sub FormTicTacToe_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    End Sub
+
+    Private Sub Button_Reset_Click(sender As System.Object, e As System.EventArgs) Handles Button_Reset.Click
+
+        ButtonR1C1.Text = ""
+        ButtonR1C2.Text = ""
+        ButtonR1C3.Text = ""
+        ButtonR2C1.Text = ""
+        ButtonR2C2.Text = ""
+        ButtonR2C3.Text = ""
+        ButtonR3C1.Text = ""
+        ButtonR3C2.Text = ""
+        ButtonR3C3.Text = ""
+
+        gCurrentMove = 0
+
+    End Sub
+
+    Private Sub Button_Exit_Click(sender As System.Object, e As System.EventArgs) Handles Button_Exit.Click
+
+        Me.Close()
+
+    End Sub
+
+    Private Sub ButtonCheck_Click(sender As System.Object, e As System.EventArgs) Handles ButtonCheck.Click
+
+        Check4Winner()
+
+    End Sub
+End Class
