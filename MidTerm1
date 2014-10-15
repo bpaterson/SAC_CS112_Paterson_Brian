@@ -23,10 +23,19 @@ public class Tests {
 		while (playing == true){	// Check to see if the player still wants to play
 			
 		
-		if (win == true) {			// check to see if the player has won
+		if (win == true) {			// check to see if the player has won & reset the game
 			win = false;			// reset win boolean
-		} else if (lose == true){ 	// check to see if the player has lost
-			lose = false;			// reset lose boolean
+			Input = false;
+			Input3 = 0;
+			RN = 0;
+			Player = 0;
+			
+		} else if (lose == true){ 	// check to see if the player has lost & reset the game
+			lose = false;			
+			Input = false;
+			Input3 = 0;
+			RN = 0;
+			Player =0;
 			}
 		
 		RandomNumber myRandomNumber = new RandomNumber();	
@@ -48,7 +57,8 @@ public class Tests {
 			} else if (Player != 1 || Player != 2){
 				JOptionPane.showMessageDialog(null,  "Please input a 1 or 2 to continue!");
 			}
-		}	
+		}
+		
 		if (Player == RN) {			// Checks to see if the player wins or loses this round
 				win = true;
 				wincount++;
@@ -62,8 +72,10 @@ public class Tests {
 		String Input2 = JOptionPane.showInputDialog(null, "Would you like to play again?\n1 = Yes, 2 = No");
 		Input3 = Integer.parseInt(Input2);
 		
-		if (Input3 == 2)			// Player decides if they want to keep playing
+		if (Input3 == 2)		// Player decides if they want to keep playing
 			playing = false;
+			
+		
 			
 	//------------------------------------------------------------------------------------------------------
 						
@@ -71,5 +83,6 @@ public class Tests {
 			JOptionPane.showMessageDialog(null, "You have won: " + wincount + "Time(s)\nYou have lost: " + losecount + "Time(s)\n");
 		
 			}
+
 	}
 }
