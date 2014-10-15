@@ -1,0 +1,75 @@
+import javax.swing.JOptionPane;
+
+public class Tests {
+	
+	
+	public static void main(String[] args) {
+		
+		boolean win = false;		//Did player win that round?
+		boolean lose = false;		//Did player lose that round?
+		boolean Input = false;		//Player's Guess, "ODD OR EVEN"
+		boolean playing = true;		//Player still playing?
+		int wincount = 0;			//Did player win? Keep track of wins
+		int losecount = 0;			//Did player lose? Keep track of loses
+		int RN = 0;					//Random Number 
+		int Player = 0;				//Players Guess ODD OR EVEN
+		int Input3 = 0;				//Still Playing?
+		String System = "";			//System is ODD or EVEN?
+		
+		JOptionPane.showMessageDialog(null, "Welcome to Guess a Number Game, ODDS & EVENS.\n");
+		JOptionPane.showMessageDialog(null, "The goal of this game is to guess whether the number is ODD or EVEN.\n");
+		JOptionPane.showMessageDialog(null, "Keep in mind, for this game you'll be using numbers.\n1 = ODD, 2 = EVEN");
+		
+		while (playing == true){	// Check to see if the player still wants to play
+			
+		
+		if (win == true) {			// check to see if the player has won
+			win = false;			// reset win boolean
+		} else if (lose == true){ 	// check to see if the player has lost
+			lose = false;			// reset lose boolean
+			}
+		
+		RandomNumber myRandomNumber = new RandomNumber();	
+		RN = myRandomNumber.get_a_number();
+		
+		if (RN == 1){
+			System = "ODD";
+		}else if (RN == 2){
+			System = "EVEN";
+		}
+		
+		while (Input == false){		// Player inputs ODD OR EVEN, continue when ODD or EVEN
+		String Guess = JOptionPane.showInputDialog(null, "ODD OR EVEN?\n1 = ODD, 2 = EVEN");
+		
+		Player = Integer.parseInt (Guess);
+		
+			if (Player == 1 || Player == 2){
+				Input = true;
+			} else if (Player != 1 || Player != 2){
+				JOptionPane.showMessageDialog(null,  "Please input a 1 or 2 to continue!");
+			}
+		}	
+		if (Player == RN) {			// Checks to see if the player wins or loses this round
+				win = true;
+				wincount++;
+				JOptionPane.showMessageDialog(null, "You were correct! The number was: " + RN + " Which is " + System);
+			} else {
+				lose = true;
+				losecount++;
+				JOptionPane.showMessageDialog(null,  "You were incorrect! The number was: " + RN + " Which is " + System);
+			}
+		
+		String Input2 = JOptionPane.showInputDialog(null, "Would you like to play again?\n1 = Yes, 2 = No");
+		Input3 = Integer.parseInt(Input2);
+		
+		if (Input3 == 2)			// Player decides if they want to keep playing
+			playing = false;
+			
+	//------------------------------------------------------------------------------------------------------
+						
+		} if (playing == false) {		// Prompt the player on their score
+			JOptionPane.showMessageDialog(null, "You have won: " + wincount + "Time(s)\nYou have lost: " + losecount + "Time(s)\n");
+		
+			}
+	}
+}
