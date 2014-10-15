@@ -1,0 +1,6 @@
+public class RandomNumber {
+	
+	public int get_a_number(){
+		return 1 + (int) (Math.random() * 2);
+	}
+}
