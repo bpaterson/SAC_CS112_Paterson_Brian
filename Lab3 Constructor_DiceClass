@@ -1,0 +1,14 @@
+public class Dice {
+		
+		private int rDice;
+		
+		public Dice(int Dices) {
+			rDice = 1 + (int) (Math.random() * (Dices * 6));
+		}
+
+	public int getrDice() {
+		return rDice;
+	}
+	
+	
+}
