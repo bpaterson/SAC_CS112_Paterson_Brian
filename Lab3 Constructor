@@ -1,0 +1,41 @@
+import javax.swing.JOptionPane;
+
+public class Tests {
+	
+	public static void main(String[] args) {
+		
+		
+		
+		JOptionPane.showMessageDialog( null, "Welcome to Guess A Number Game\n");
+		
+		int count = 3;
+		while (count > 0) {
+			JOptionPane.showMessageDialog(null, "You may play this game " + count + " more times.\n"); count--;
+		
+		String Dice_Num = JOptionPane.showInputDialog("How many Dices would you like to be rolled?");
+		int Dices = Integer.parseInt(Dice_Num);
+		
+		int Dice_Total = Dices * 6;
+		
+		String Input = JOptionPane.showInputDialog("Pick a number between 1 and " + Dice_Total);
+		int Guess = Integer.parseInt(Input);
+		
+		int RN;
+		String Answer = "";
+		String a = " is Greater than ";
+		String b = " is Less than ";
+		
+		Dice myDice = new Dice(Dices);
+		RN = myDice.getrDice();
+		
+		if ( Guess != RN){
+			 Answer = (Guess > RN)?a:b;
+		JOptionPane.showMessageDialog(null, "Your Guess of " + Guess + " " + Answer + " " + RN);
+		} else {
+			if (Guess == RN)
+				JOptionPane.showMessageDialog(null, "Your Guess of " + Guess + " is Correct! The number was " + RN);
+				count ++;
+			}
+		}
+	}
+}
