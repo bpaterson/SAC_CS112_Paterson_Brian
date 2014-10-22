@@ -33,12 +33,14 @@ public class Tests {
 		RN = myRandomNumber.getRNum();
 		
 
-		if ( Guess != RN)
+		iif ( Guess != RN){
 			 Answer = (Guess > RN)?a:b;
-		JOptionPane.showMessageDialog(null, "Your Number " + Guess + " " + Answer + " " + RN + "\n");
-		
-		if (Guess == RN)
-		JOptionPane.showMessageDialog(null, "Your Guess " + Guess + " is Correct! The number was " + RN + "\n");
+		JOptionPane.showMessageDialog(null, "Your Guess " + Guess + " " + Answer + " " + RN + "\n");
+		} else {
+			if (Guess == RN)
+				JOptionPane.showMessageDialog(null, "Your Guess " + Guess + " is Correct! The number was " + RN + "\n");
+				count ++;
+			}
 		}
 	}
 }
