@@ -38,7 +38,7 @@ public class Tests {
 		JOptionPane.showMessageDialog(null, "Your Number " + Guess + " " + Answer + " " + RN + "\n");
 		
 		if (Guess == RN)
-		JOptionPane.showMessageDialog(null, "Your Number " + Guess + " " + Answer + " " + RN + "\n");
+		JOptionPane.showMessageDialog(null, "Your Guess " + Guess + " is Correct! The number was " + RN + "\n");
 		}
 	}
 }
