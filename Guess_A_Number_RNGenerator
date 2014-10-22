@@ -1,0 +1,17 @@
+public class RandomNumber {
+	
+	private int RNum;
+	
+	public RandomNumber(int low, int high) {
+		setRNum(low + (int) (Math.random() * high));
+	}
+
+	public int getRNum() {
+		return RNum;
+	}
+
+	public void setRNum(int rNum) {
+		RNum = rNum;
+	}
+	
+}
