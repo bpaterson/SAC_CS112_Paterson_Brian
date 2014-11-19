@@ -1,0 +1,13 @@
+public class SingleDice{
+		
+	private int rDice;
+	
+	
+	public SingleDice() {
+		rDice = 1 + (int) (Math.random()  * 6);
+	}
+
+	public int getrDice() {
+		return rDice;
+	}
+}
