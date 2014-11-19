@@ -1,0 +1,119 @@
+
+import javax.swing.JOptionPane;
+
+public class Exam2 {
+
+	public static void main(String[] args) {
+	
+	int count = 0;
+	boolean playing = true; // playing?
+	boolean Continue = true; // Continue playing selected GameType?
+	
+	JOptionPane.showMessageDialog( null, "Welcome to a Dice game.\n");
+	JOptionPane.showMessageDialog( null, "We have 3 types of game modes to pick from.\n");
+	JOptionPane.showMessageDialog( null, "Single Dice, Double Dice, and Tripple Dice.\n");
+	
+	do{ // check to see if the player is still interested in playing
+		
+	
+	String GameChoice = JOptionPane.showInputDialog("Which Game would you like to play?\n1 = Single Dice,"
+			+ " 2 = Double Dice, 3 = Tripple Dice\n");
+	int GameType = Integer.parseInt(GameChoice);
+	
+	if (GameType == 1){ // Game Type 1
+		do{
+		SingleDice OneDice = new SingleDice();
+		int Dealer = OneDice.getrDice();
+		
+		System.out.printf("Dice value is: " + Dealer + "\n"); //Debug, Dice Value
+		count ++;
+		System.out.printf("Dice has been rolled: " + count + "\n");
+		
+		String Input = JOptionPane.showInputDialog("Pick a number between 1 and 6");
+		int Guess = Integer.parseInt(Input);
+		
+		if (Guess == Dealer){
+			System.out.printf("You Win! You picked: " + Guess + ", System number is: " + Dealer + "\n");
+		} else if(Guess != Dealer){
+			System.out.printf("You Lose! You picked: " + Guess + ", System number is: " + Dealer + "\n");
+		}
+		
+		String Input2 = JOptionPane.showInputDialog("do you want to play again?\n 1 = Yes, 2 = No\n");
+		int User = Integer.parseInt(Input2);
+		if (User == 2){
+			Continue = false;
+			count = 0;
+		}
+		} while (Continue == true);//Still playing this GameType? One Dice
+	} else { // End GameType 1
+		if (GameType == 2){ //Game Type 2
+			do{ 
+				DoubleDice TwoDice = new DoubleDice();
+				int Dealer = TwoDice.getDiceTotal();
+				System.out.printf("-----------------------------------------\n");
+				System.out.printf("Dice1 is: " + TwoDice.Dice1 + "\n");
+				count++;
+				System.out.printf("Dice2 is: " + TwoDice.Dice2 + "\n");
+				count++;
+				System.out.printf("Dice Total is: " + Dealer + "\n"); //Debug, Dice Value
+				System.out.printf("Number of rolls: " + count + "\n");
+				
+				String Input = JOptionPane.showInputDialog("Pick a number between 2 and 12");
+				int Guess = Integer.parseInt(Input);
+				
+				if (Guess == Dealer){
+					System.out.printf("You Win! You picked: " + Guess + ", System number is: " + Dealer + "\n");
+				}else if(Guess != Dealer){
+					System.out.printf("You Lose! You picked: " + Guess + ", System number is: " + Dealer + "\n");
+				}
+				
+				String Input2 = JOptionPane.showInputDialog("do you want to play again?\n 1 = Yes, 2 = No\n");
+				int User = Integer.parseInt(Input2);
+				if (User == 2){ 
+					Continue = false;
+					count = 0;
+				}
+			}while (Continue == true); //Still playing this GameType? Two Dice
+		} else {
+			if (GameType == 3){ //Game Type 3
+				do{
+					TrippleDice ThreeDice = new TrippleDice();
+					int Dealer = ThreeDice.getDiceTotal();
+					System.out.printf("-----------------------------------------\n");
+					System.out.printf("Dice1 is: " + ThreeDice.Dice1 + "\n");
+					count ++;
+					System.out.printf("Dice2 is: " + ThreeDice.Dice2 + "\n");
+					count ++;
+					System.out.printf("Dice3 is: " + ThreeDice.Dice3 + "\n");
+					count++;
+					System.out.printf("Dice Total is: " + ThreeDice.getDiceTotal() + "\n");
+					System.out.printf("Number of rolls: " + count + "\n");
+					
+					String Input = JOptionPane.showInputDialog("Pick a number between 3 and 18");
+					int Guess = Integer.parseInt(Input);
+					
+					if (Guess == Dealer){
+						System.out.printf("You Win! You picked: " + Guess + ", System number is: " + Dealer + "\n");
+					}else if (Guess != Dealer){
+						System.out.printf("You Lose! You picked: " + Guess + ", System number is: " + Dealer + "\n");
+					}
+					
+					String Input2 = JOptionPane.showInputDialog("do you want to play again?\n 1 = Yes, 2 No\n");
+					int User = Integer.parseInt(Input2);
+					if (User == 2){
+						Continue = false;
+						count = 0;
+					}
+				}while (Continue = true); // Still playing this GameType? Three Dice
+			}
+		}
+	}
+	String Input2 = JOptionPane.showInputDialog ("Do you want to quit the game?\n1 = Yes, 2 = No"); // check to see if the player still wants to play.
+	int User = Integer.parseInt(Input2);
+	if (User == 1){
+		playing = false;
+	}
+	}while (playing == true); //Still playing this game?
+	}
+
+}
