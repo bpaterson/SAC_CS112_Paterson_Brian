@@ -1,0 +1,17 @@
+public class DoubleDice {
+
+public int Dice1;
+public int Dice2;
+
+private int DiceTotal;
+	
+	public DoubleDice() {
+		Dice1 = 1 + (int) (Math.random() * 6); 
+		Dice2 = 1 + (int) (Math.random() * 6); 
+		DiceTotal = Dice1 + Dice2;
+	}
+
+	public int getDiceTotal() {
+		return DiceTotal;
+	}
+}
